@@ -2,23 +2,24 @@
   "collectionName": "components_carousel_card_carousel_items",
   "info": {
     "displayName": "CardCarouselItem",
-    "icon": "arrows-alt-h"
+    "icon": "arrows-alt-h",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "Title": {
+    "title": {
       "type": "string",
       "maxLength": 25
     },
-    "Image": {
-      "allowedTypes": [
-        "images"
-      ],
+    "image": {
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
-    "Link": {
+    "link": {
       "type": "string"
     }
   }

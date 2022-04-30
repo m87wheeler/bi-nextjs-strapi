@@ -1,0 +1,48 @@
+{
+  "collectionName": "components_ui_element_buttons",
+  "info": {
+    "displayName": "Button",
+    "icon": "hand-pointer",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "enumeration",
+      "enum": [
+        "Chevron Right",
+        "Chevron Left"
+      ]
+    },
+    "alignIconWithText": {
+      "type": "enumeration",
+      "enum": [
+        "Left",
+        "Right"
+      ]
+    },
+    "colour": {
+      "type": "enumeration",
+      "enum": [
+        "Primary",
+        "Secondary",
+        "Transparent"
+      ]
+    },
+    "border": {
+      "type": "enumeration",
+      "enum": [
+        "Primary",
+        "Secondary",
+        "Transparent"
+      ]
+    },
+    "link": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

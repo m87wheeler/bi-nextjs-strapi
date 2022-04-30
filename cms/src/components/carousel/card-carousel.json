@@ -2,11 +2,12 @@
   "collectionName": "components_carousel_card_carousels",
   "info": {
     "displayName": "CardCarousel",
-    "icon": "angle-right"
+    "icon": "angle-right",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "Content": {
+    "content": {
       "type": "component",
       "repeatable": true,
       "component": "carousel.card-carousel-item"
