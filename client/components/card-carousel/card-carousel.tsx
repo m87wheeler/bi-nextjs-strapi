@@ -1,7 +1,6 @@
 import * as React from "react";
 import useMediaQuery from "@m87wheeler/use-media-query";
 import CardCarouselItem from "./card-carousel-item";
-import { TEMP_DATA } from "./TEMP-DATA";
 import {
   ButtonContainer,
   CarouselButton,
@@ -12,21 +11,25 @@ import {
 } from "./styles";
 
 interface Props {
-  itemsPerPage: number;
+  itemsPerPage?: number;
+  cards?: any[];
 }
 
-const CardCarousel = ({ itemsPerPage = 3, ...props }: Props) => {
+const CardCarousel = ({ ...props }: Props) => {
   const [activeIndex, setActiveIndex] = React.useState(0);
-  const maxItems = useMediaQuery([1, 1, 2, itemsPerPage]);
+  const maxItems = useMediaQuery([1, 1, 2, props?.itemsPerPage ?? 3]);
 
   const handleActiveIndex = React.useCallback(
     (n: number) => () => {
       if (activeIndex + n < 0) return;
-      if (activeIndex + n > TEMP_DATA.length + 1 - ((maxItems ?? 1) + 1))
+      if (
+        activeIndex + n >
+        (props?.cards?.length ?? 0) + 1 - ((maxItems ?? 1) + 1)
+      )
         return;
       setActiveIndex((state) => state + n);
     },
-    [activeIndex, maxItems]
+    [activeIndex, maxItems, props.cards]
   );
 
   return (
@@ -36,7 +39,7 @@ const CardCarousel = ({ itemsPerPage = 3, ...props }: Props) => {
       </ButtonContainer>
       <PlaneContainer>
         <CarouselPlane activeIndex={activeIndex}>
-          {TEMP_DATA.map((item, i) => (
+          {props?.cards?.map((item, i) => (
             <CardCarouselItem
               key={item.id}
               inView={i >= activeIndex && i < activeIndex + (maxItems ?? 1)}
@@ -49,7 +52,7 @@ const CardCarousel = ({ itemsPerPage = 3, ...props }: Props) => {
         <CarouselButton onClick={handleActiveIndex(1)}>N</CarouselButton>
       </ButtonContainer>
       <StyledCarouselProgress
-        items={TEMP_DATA.length}
+        items={props?.cards?.length ?? 0}
         currentItem={activeIndex}
         itemsPerPage={maxItems ?? 1}
       />

@@ -4,3 +4,8 @@ export const isExternalUrl = (url: string) => {
   const regex = new RegExp(expression);
   return url.match(regex);
 };
+
+export const cmsAsset = (url?: string): string => {
+  if (!url) return "";
+  return `${"http://localhost:1337"}${url}`;
+};

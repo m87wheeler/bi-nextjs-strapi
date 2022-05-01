@@ -1,6 +1,8 @@
-export const getPage = `
-query Page($slug: String!) {
-    pages(filters: { slug: { eq: $slug } } ) {
+import { gql } from "@apollo/client";
+
+export const getPage = gql`
+  query Page($slug: String!) {
+    pages(filters: { slug: { eq: $slug } }) {
       data {
         attributes {
           type: __typename
@@ -26,9 +28,11 @@ query Page($slug: String!) {
             }
             ... on ComponentCarouselCardCarousel {
               type: __typename
-              content {
+              itemsPerPage
+              cards: content {
                 ... on ComponentCarouselCardCarouselItem {
                   type: __typename
+                  id
                   title
                   image {
                     data {
@@ -46,4 +50,4 @@ query Page($slug: String!) {
       }
     }
   }
-  `;
+`;

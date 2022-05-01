@@ -1,4 +1,5 @@
 import * as React from "react";
+import { cmsAsset } from "../../utils";
 import LinkType from "../link-type/link-type";
 import {
   CarouselCardTitle,
@@ -8,17 +9,19 @@ import {
 
 interface Props {
   title?: string;
-  image?: string;
+  image?: { data: { attributes: { url: string } } };
   link?: string;
   inView: boolean;
 }
 
-const CardCarouselItem = ({ title, image, link, inView, ...props }: Props) => {
+const CardCarouselItem = ({ inView, ...props }: Props) => {
   return (
-    <LinkType href={link} {...props}>
+    <LinkType href={props?.link} {...props}>
       <CarouselCardContainer inView={inView}>
-        <CarouselCardImage image={image} />
-        <CarouselCardTitle>{title}</CarouselCardTitle>
+        <CarouselCardImage
+          image={cmsAsset(props?.image?.data?.attributes?.url)}
+        />
+        <CarouselCardTitle>{props?.title}</CarouselCardTitle>
       </CarouselCardContainer>
     </LinkType>
   );

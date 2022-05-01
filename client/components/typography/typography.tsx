@@ -28,7 +28,6 @@ const Typography = ({
   ...props
 }: Props) => {
   const fallback = variant ? variant : element === "span" ? "p" : element;
-  console.log(fallback);
 
   switch (element) {
     case "h1":
