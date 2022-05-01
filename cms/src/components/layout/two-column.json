@@ -26,12 +26,6 @@
         "Right"
       ]
     },
-    "leftColumnContent": {
-      "type": "richtext"
-    },
-    "rightColumnContent": {
-      "type": "richtext"
-    },
     "button": {
       "type": "component",
       "repeatable": false,
@@ -44,6 +38,14 @@
         "Left",
         "Right"
       ]
+    },
+    "columns": {
+      "type": "component",
+      "repeatable": true,
+      "component": "layout.content-column",
+      "required": true,
+      "max": 2,
+      "min": 1
     }
   }
 }

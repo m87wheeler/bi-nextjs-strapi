@@ -1,6 +1,6 @@
 import * as React from "react";
-import TwoColumn from "../../layouts/two-column";
 import CardCarousel from "../card-carousel/card-carousel";
+import TwoColumn from "../two-column/two-column";
 
 type Props = {
   components: any[];

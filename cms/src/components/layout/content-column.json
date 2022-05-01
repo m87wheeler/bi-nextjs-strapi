@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_layout_content_columns",
+  "info": {
+    "displayName": "contentColumn",
+    "icon": "arrows-alt-v"
+  },
+  "options": {},
+  "attributes": {
+    "columnStart": {
+      "type": "integer",
+      "required": true,
+      "min": 1,
+      "max": 11
+    },
+    "columnSpan": {
+      "type": "integer",
+      "required": true,
+      "min": 1,
+      "max": 12
+    },
+    "content": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}

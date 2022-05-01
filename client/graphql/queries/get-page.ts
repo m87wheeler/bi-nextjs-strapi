@@ -13,8 +13,13 @@ export const getPage = gql`
               title
               titleWidth
               titleAlign
-              leftColumnContent
-              rightColumnContent
+              columns {
+                ... on ComponentLayoutContentColumn {
+                  columnStart
+                  columnSpan
+                  content
+                }
+              }
               button {
                 ... on ComponentUiElementButton {
                   type: __typename
