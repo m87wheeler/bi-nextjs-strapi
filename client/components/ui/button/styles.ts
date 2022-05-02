@@ -8,10 +8,15 @@ export const ButtonContainer = styled.button<{
   min-width: 8rem;
   font-size: 0.9rem;
   text-transform: uppercase;
+  letter-spacing: 0.05em;
   color: ${({ borderAndText }) => `var(--color-${borderAndText})`};
   background-color: ${({ buttonBackground }) =>
     `var(--color-${buttonBackground})`};
   border: 2px solid;
   border-color: ${({ borderAndText }) => `var(--color-${borderAndText})`};
   cursor: pointer;
+
+  a {
+    color: inherit;
+  }
 `;
