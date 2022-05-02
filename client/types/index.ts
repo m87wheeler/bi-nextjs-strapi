@@ -8,11 +8,16 @@ export type FontWeightType = 300 | 400 | 500 | 600 | "unset" | "inherit";
 export type AlignType = "left" | "center" | "right";
 export type FlexAlignType = "flex-start" | "center" | "flex-end" | "stretch";
 
+export type NavigationLinksType = {
+  navigationText: string;
+  showInNavigation: boolean;
+  slug: string;
+};
+
 /** page props */
 export interface IPageProps {
   title: string;
   slug: string;
-  components: ComponentTypes[];
   locale: string;
   localizations: { data: { attributes: { locale: string } }[] };
   metaData: {
@@ -20,6 +25,8 @@ export interface IPageProps {
     metaDescription: string;
     metaKeywords?: string;
   };
+  components: ComponentTypes[];
+  navigation: NavigationLinksType[];
 }
 
 export type GridItemProps = {

@@ -1,3 +1,4 @@
+import { NavigationLinksType } from "../types";
 import { BaseImageProps } from "../types/cms-types";
 
 export const isExternalUrl = (url: string) => {
@@ -33,6 +34,23 @@ export function getStrapiMedia(media?: BaseImageProps): string {
   return imageUrl;
 }
 
+export const formatNavigation = (data: any[]): NavigationLinksType[] => {
+  return data?.map((item) => {
+    return {
+      slug:
+        item?.attributes?.slug === "homepage"
+          ? ""
+          : item?.attributes?.slug ?? "",
+      navigationText: item?.attributes?.pageNavigation?.navigationText ?? "",
+      showInNavigation:
+        item?.attributes?.pageNavigation?.showInNavigation ?? false,
+    };
+  });
+};
+
 export const formatPrimaryPage = (data: any) => {
-  return data?.primaryPages?.data?.[0]?.attributes ?? {};
+  return {
+    ...(data?.primaryPages?.data?.[0]?.attributes ?? {}),
+    navigation: formatNavigation(data?.navigation?.data),
+  };
 };

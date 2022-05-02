@@ -1,6 +1,7 @@
 import { gql } from "@apollo/client";
 import { getComponents } from "./common/get-components";
 import { getMetaData } from "./common/get-metadata";
+import { getNavigation } from "./common/get-navigation";
 
 export const getPrimaryPage = gql`
   query PrimaryPage($slug: String!, $locale: I18NLocaleCode!) {
@@ -22,5 +23,6 @@ export const getPrimaryPage = gql`
         }
       }
     }
+    ${getNavigation}
   }
 `;

@@ -1,15 +1,15 @@
-import Page from "../components/page/page";
-import Rendering from "../components/rendering/rendering";
-import apolloClient from "../graphql/client";
-import { getPrimaryPage } from "../graphql/queries";
-import { IPageProps } from "../types";
-import { formatPrimaryPage } from "../utils";
+import { IPageProps } from "../../types";
+import { getPrimaryPage } from "../../graphql/queries";
+import { formatPrimaryPage } from "../../utils";
+import Page from "../../components/page/page";
+import Rendering from "../../components/rendering/rendering";
+import apolloClient from "../../graphql/client";
 
 interface Props extends IPageProps {
   lang: string;
 }
 
-const Home = ({ ...props }: Props) => {
+const Projects = ({ ...props }: Props) => {
   return (
     <Page navigation={props?.navigation}>
       <Rendering components={props?.components} />
@@ -22,7 +22,7 @@ export async function getServerSideProps() {
 
   const { data } = await apolloClient.query({
     query: getPrimaryPage,
-    variables: { locale, slug: `homepage` },
+    variables: { locale, slug: `projects` },
   });
 
   return {
@@ -33,4 +33,4 @@ export async function getServerSideProps() {
   };
 }
 
-export default Home;
+export default Projects;

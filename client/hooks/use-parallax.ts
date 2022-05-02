@@ -1,7 +1,7 @@
 import * as React from "react";
 
 export const useParallax = (ref: any, height: number, strength: number = 4) => {
-  React.useLayoutEffect(() => {
+  React.useEffect(() => {
     if (typeof window === "undefined") return;
 
     function handleParallax() {
