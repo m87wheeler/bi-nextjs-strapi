@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { OverlayType } from "../../../types/cms-types";
+import Typography from "../../typography/typography";
 
 export const HeroContainer = styled.div`
   position: relative;
@@ -40,3 +41,13 @@ export const HeroImage = styled.div<{ src: string; overlay: OverlayType }>`
     z-index: 1;
   }
 `;
+
+export const Titles = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+`;
+export const HeroTitle = styled(Typography)``;
+export const HeroSubTitle = styled(Typography)``;

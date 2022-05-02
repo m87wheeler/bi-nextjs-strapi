@@ -16,7 +16,7 @@ export type ImageArrayProps = {
   data: BaseImageProps[];
 };
 
-export type ColorProps = "primary" | "secondary" | "white" | "none";
+export type ColorProps = "primary" | "secondary" | "white" | "black" | "none";
 export type OverlayType = "black" | "white" | "none";
 
 export type SharedStylesProps = {

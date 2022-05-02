@@ -14,6 +14,7 @@ export interface TypographyProps {
   weight?: FontWeightType;
   align?: AlignType;
   color?: ColorProps;
+  noWrap?: boolean;
 }
 
 const typographyStyles = ({
@@ -22,6 +23,7 @@ const typographyStyles = ({
   weight,
   align = "left",
   color,
+  noWrap,
 }: TypographyProps) => css`
   font-family: ${theme.font.family[font]};
   font-size: ${theme.font.size[variant]};
@@ -30,6 +32,7 @@ const typographyStyles = ({
   text-align: ${align};
   color: ${`var(--color-${color}-contrast)`};
   letter-spacing: ${variant !== "p" ? ".075em" : 0};
+  white-space: ${noWrap ? "nowrap" : "normal"};
 `;
 
 export const H1Element = styled.h1<TypographyProps>`
