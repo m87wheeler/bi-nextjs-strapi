@@ -1,26 +1,26 @@
+import Rendering from "../components/rendering/rendering";
 import apolloClient from "../graphql/client";
 import { getHomepage } from "../graphql/queries";
 import { IPageProps } from "../types";
 
-interface Props extends IPageProps {}
+interface Props extends IPageProps {
+  lang: string;
+}
 
 const Home = ({ ...props }: Props) => {
-  return (
-    <div>
-      <h1>{props?.title}</h1>
-      <p>{JSON.stringify({ ...props })}</p>
-    </div>
-  );
+  return <Rendering components={props?.components} />;
 };
 
 export async function getServerSideProps() {
+  const locale = "en";
+
   const { data } = await apolloClient.query({
     query: getHomepage,
-    variables: { locale: "en" },
+    variables: { locale },
   });
 
   return {
-    props: { ...data?.homepage?.data?.attributes },
+    props: { ...data?.homepage?.data?.attributes, lang: locale },
   };
 }
 

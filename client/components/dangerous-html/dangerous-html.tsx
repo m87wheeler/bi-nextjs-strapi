@@ -12,7 +12,6 @@ const DangerousHtml = ({ html, ...props }: Props) => {
       'srcset="/uploads'
       //   `srcset=\"${host}/uploads`
     );
-    console.log(secondParse);
     return secondParse;
   }
 

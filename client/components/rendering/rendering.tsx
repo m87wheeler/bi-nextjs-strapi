@@ -1,28 +1,18 @@
 import * as React from "react";
-import CardCarousel from "../card-carousel/card-carousel";
-import TwoColumn from "../two-column/two-column";
+import { ComponentTypes } from "../../types/cms-types";
+import TwoColumn from "../layout/two-column/two-column";
 
-type Props = {
-  components: any[];
-};
+interface Props {
+  components: ComponentTypes[];
+}
 
-const Rendering = ({ components = [] }: Props): any => {
-  const Component = React.useCallback(
-    ({ type, ...props }: { type: string }) => {
-      switch (type) {
-        case "ComponentLayoutTwoColumn":
-          return <TwoColumn {...props} />;
-        case "ComponentCarouselCardCarousel":
-          return <CardCarousel {...props} />;
-        default:
-          return <></>;
-      }
-    },
-    []
-  );
-
-  return components.map((component, index) => {
-    return <Component {...component} key={index} />;
+const Rendering = ({ components = [] }: Props) => {
+  return components.map((c) => {
+    if (c.type === "ComponentLayoutTwoColumn") {
+      return <TwoColumn key={c?.id} {...c} />;
+    } else {
+      return <p key={c?.id}>No Component</p>;
+    }
   });
 };
 

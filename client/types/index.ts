@@ -1,3 +1,5 @@
+import { ComponentTypes } from "./cms-types";
+
 export type TypographyType = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
 export type FontType = "sans" | "serif";
 export type FontWeightType = 300 | 400 | 500 | 600 | "unset" | "inherit";
@@ -9,7 +11,7 @@ export type AlignType = "left" | "center" | "right";
 export interface IPageProps {
   title: string;
   slug: string;
-  content: any[];
+  components: ComponentTypes[];
   locale: string;
   localizations: { data: { attributes: { locale: string } }[] };
   metaData: {

@@ -20,7 +20,7 @@ export const getHomepage = gql`
             metaDescription
             metaKeywords
           }
-          content {
+          components: content {
             ... on ComponentLayoutTwoColumn {
               type: __typename
               id
