@@ -1,3 +1,5 @@
+import { TypographyType } from ".";
+
 type ImageProps = {
   data: {
     attributes: {
@@ -13,8 +15,19 @@ export type SharedStylesProps = {
   background: ColorProps;
 };
 
-export interface TwoColumnProps {
+export interface CmsComponentType {
   id: string;
+  styles?: SharedStylesProps;
+}
+
+export interface TitleSectionProps extends CmsComponentType {
+  type: "ComponentUiTitle";
+  text: string;
+  element: TypographyType;
+  variant: TypographyType;
+}
+
+export interface TwoColumnProps extends CmsComponentType {
   type: "ComponentLayoutTwoColumn";
   title?: string;
   titleAlign?: "left" | "center" | "right";
@@ -22,7 +35,6 @@ export interface TwoColumnProps {
   column: any[];
   button?: Object;
   buttonColumn?: "left" | "center" | "right";
-  styles?: SharedStylesProps;
 }
 
 export interface CardCarouselItemProps {
@@ -33,13 +45,11 @@ export interface CardCarouselItemProps {
   link?: string;
 }
 
-export interface CardCarouselProps {
-  id: string;
+export interface CardCarouselProps extends CmsComponentType {
   type: "ComponentCardCarouselCardCarousel";
   itemsPerPage: number;
   items: CardCarouselItemProps[];
   projects: { data: any[] };
-  styles?: SharedStylesProps;
 }
 
 export interface ButtonProps {
@@ -49,11 +59,9 @@ export interface ButtonProps {
   buttonBackground: ColorProps;
 }
 
-export interface ButtonSectionProps {
+export interface ButtonSectionProps extends CmsComponentType {
   type: "ComponentSectionButtonSection";
-  id: string;
   button: ButtonProps;
-  styles?: SharedStylesProps;
 }
 
 export interface QuoteBoxProps {
@@ -65,6 +73,7 @@ export interface QuoteBoxProps {
 }
 
 export type ComponentTypes =
+  | TitleSectionProps
   | TwoColumnProps
   | CardCarouselProps
   | ButtonSectionProps

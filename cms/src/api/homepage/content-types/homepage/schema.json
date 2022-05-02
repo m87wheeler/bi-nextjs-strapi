@@ -48,7 +48,8 @@
         "layout.free-text",
         "layout.two-column",
         "section.quote-box",
-        "section.button-section"
+        "section.button-section",
+        "ui.title"
       ]
     },
     "metaData": {

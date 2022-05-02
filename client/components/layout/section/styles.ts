@@ -16,6 +16,7 @@ export const Container = styled.div<{
     styles &&
     css`
       padding-top: ${styles?.stickToTop ? 0 : "var(--section-padding-top)"};
+      margin-top: ${styles?.stickToTop ? "-1rem" : "0"};
       background-color: ${`var(--color-${styles?.background})`};
     `}
 `;

@@ -21,6 +21,20 @@ export const getHomepage = gql`
             metaKeywords
           }
           components: content {
+            ... on ComponentUiTitle {
+              type: __typename
+              id
+              text
+              element
+              variant
+              font
+              styles {
+                ... on ComponentStylesSharedStyles {
+                  stickToTop
+                  background
+                }
+              }
+            }
             ... on ComponentLayoutTwoColumn {
               type: __typename
               id

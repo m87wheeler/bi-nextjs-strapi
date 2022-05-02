@@ -29,6 +29,7 @@ const typographyStyles = ({
   line-height: ${theme.font.height[variant]};
   text-align: ${align};
   color: ${`var(--color-${color}-contrast)`};
+  letter-spacing: ${variant !== "p" ? ".075em" : 0};
 `;
 
 export const H1Element = styled.h1<TypographyProps>`

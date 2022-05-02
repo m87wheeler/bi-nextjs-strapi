@@ -45,7 +45,7 @@ const CardCarousel = ({ ...props }: CardCarouselProps) => {
   );
 
   return (
-    <Section>
+    <Section styles={props?.styles}>
       <GridItem>
         <CarouselContainer {...props} itemsPerPage={maxItems ?? 1}>
           <ButtonContainer>

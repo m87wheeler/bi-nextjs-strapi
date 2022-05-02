@@ -1,0 +1,54 @@
+{
+  "collectionName": "components_ui_titles",
+  "info": {
+    "displayName": "title",
+    "icon": "text-height",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "maxLength": 255,
+      "required": true
+    },
+    "variant": {
+      "type": "enumeration",
+      "enum": [
+        "h1",
+        "h2",
+        "h3",
+        "h4",
+        "h5",
+        "h6",
+        "p"
+      ]
+    },
+    "element": {
+      "type": "enumeration",
+      "enum": [
+        "h1",
+        "h2",
+        "h3",
+        "h4",
+        "h5",
+        "h6",
+        "p"
+      ]
+    },
+    "styles": {
+      "type": "component",
+      "repeatable": false,
+      "component": "styles.shared-styles"
+    },
+    "font": {
+      "type": "enumeration",
+      "enum": [
+        "sans",
+        "serif"
+      ],
+      "default": "serif",
+      "required": false
+    }
+  }
+}
