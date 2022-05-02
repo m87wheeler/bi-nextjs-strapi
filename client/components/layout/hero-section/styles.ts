@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { OverlayType } from "../../../types/cms-types";
-import Typography from "../../typography/typography";
 
 export const HeroContainer = styled.div`
   position: relative;
@@ -11,6 +10,15 @@ export const HeroContainer = styled.div`
 `;
 
 export const MediaContainer = styled.div`
+  position: absolute;
+  inset: 0;
+  width: inherit;
+  height: inherit;
+  min-height: inherit;
+  overflow: hidden;
+`;
+
+export const ParallaxContainer = styled.div`
   position: absolute;
   inset: 0;
   width: inherit;
@@ -47,7 +55,7 @@ export const Titles = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 100%;
+  padding: 0 1rem;
   z-index: 10;
 `;
-export const HeroTitle = styled(Typography)``;
-export const HeroSubTitle = styled(Typography)``;

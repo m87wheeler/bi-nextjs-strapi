@@ -1,9 +1,10 @@
 import * as React from "react";
-import { HeroContainer, Titles, HeroTitle, HeroSubTitle } from "./styles";
+import { HeroContainer, Titles } from "./styles";
 import { HeroSectionType } from "../../../types/cms-types";
 import GridItem from "../grid/grid-item";
 import Section from "../section/section";
 import HeroMedia from "./hero-media";
+import Typography from "../../typography/typography";
 
 const HeroSection = ({ ...props }: HeroSectionType) => {
   const textColor = React.useMemo(
@@ -17,17 +18,16 @@ const HeroSection = ({ ...props }: HeroSectionType) => {
         <HeroContainer>
           <HeroMedia media={props?.backgroundMedia} overlay={props?.overlay} />
           <Titles>
-            <HeroTitle
+            <Typography
               element="h1"
               font="serif"
               weight={400}
               color={textColor}
               align="center"
-              noWrap
             >
               {props?.title}
-            </HeroTitle>
-            <HeroSubTitle
+            </Typography>
+            <Typography
               element="p"
               variant="h5"
               font="serif"
@@ -35,7 +35,7 @@ const HeroSection = ({ ...props }: HeroSectionType) => {
               color={textColor}
             >
               {props?.subTitle}
-            </HeroSubTitle>
+            </Typography>
           </Titles>
         </HeroContainer>
       </GridItem>

@@ -13,7 +13,7 @@ export const theme = {
       serif: `'Playfair Display', serif`,
     },
     size: {
-      h1: "clamp(4rem, calc(4rem + ((1vw - 0.48rem) * 1.3889)), 5rem)",
+      h1: "clamp(3.75rem, calc(4rem + ((1vw - 0.48rem) * 1.3889)), 4.5rem)",
       h2: "clamp(3rem, calc(3rem + ((1vw - 0.48rem) * 1.3889)), 4rem)",
       h3: "clamp(2.25rem, calc(2.25rem + ((1vw - 0.48rem) * 1.3889)), 3.25rem)",
       h4: "clamp(1.75rem, calc(1.75rem + ((1vw - 0.48rem) * 1.3889)), 2.75rem)",
