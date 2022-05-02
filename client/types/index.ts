@@ -26,5 +26,6 @@ export type GridItemProps = {
   columnStart?: number;
   columnSpan?: number;
   align?: FlexAlignType;
+  fullWidth?: boolean;
   children: React.ReactNode;
 };

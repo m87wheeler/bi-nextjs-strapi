@@ -36,4 +36,12 @@ export const theme = {
     default: "250ms ease-in-out",
     fast: "100ms ease-in-out",
   },
+  breakpoints: {
+    xs: `only screen and (min-width: 0)`,
+    sm: `only screen and (min-width: 576px)`,
+    md: `only screen and (min-width: 768px)`,
+    lg: `only screen and (min-width: 992px)`,
+    xl: `only screen and (min-width: 1200px)`,
+    xxl: `only screen and (min-width: 1400px)`,
+  },
 };

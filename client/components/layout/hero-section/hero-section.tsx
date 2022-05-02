@@ -14,7 +14,7 @@ const HeroSection = ({ ...props }: HeroSectionType) => {
 
   return (
     <Section top>
-      <GridItem columnStart={1} columnSpan={12}>
+      <GridItem columnStart={1} columnSpan={12} fullWidth>
         <HeroContainer>
           <HeroMedia media={props?.backgroundMedia} overlay={props?.overlay} />
           <Titles>
