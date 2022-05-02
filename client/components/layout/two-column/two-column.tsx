@@ -23,7 +23,7 @@ const TwoColumn = ({ ...props }: TwoColumnProps) => {
   return (
     <Grid>
       {props?.column?.map((col, i) => (
-        <GridItem key={i} {...col}>
+        <GridItem key={i} align={props?.titleAlign} {...col}>
           {handleTitlePlacement(i, props?.titleColumn)}
           <DangerousHtml html={col.content} />
         </GridItem>

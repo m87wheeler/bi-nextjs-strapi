@@ -6,6 +6,7 @@ export type FontType = "sans" | "serif";
 export type FontWeightType = 300 | 400 | 500 | 600 | "unset" | "inherit";
 
 export type AlignType = "left" | "center" | "right";
+export type FlexAlignType = "flex-start" | "center" | "flex-end" | "stretch";
 
 /** page props */
 export interface IPageProps {
@@ -24,5 +25,6 @@ export interface IPageProps {
 export type GridItemProps = {
   columnStart?: number;
   columnSpan?: number;
+  align?: FlexAlignType;
   children: React.ReactNode;
 };
