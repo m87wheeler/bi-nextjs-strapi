@@ -62,11 +62,12 @@ export const getHomepage = gql`
                 }
               }
               projects {
-                ... on ProjectRelationResponseCollection {
-                  data {
+                data {
+                  id
+                  ... on ProjectEntity {
                     attributes {
                       title
-                      slug
+                      link: slug
                       carouselCard {
                         title
                         image {

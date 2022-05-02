@@ -1,3 +1,11 @@
+type ImageProps = {
+  data: {
+    attributes: {
+      url: string;
+    };
+  };
+};
+
 export interface TwoColumnProps {
   id: string;
   type: "ComponentLayoutTwoColumn";
@@ -9,11 +17,19 @@ export interface TwoColumnProps {
   buttonColumn?: "left" | "center" | "right";
 }
 
+export interface CardCarouselItemProps {
+  id: string;
+  type: "ComponentCardCarouselCardCarouselItem";
+  title: string;
+  image: ImageProps;
+  link?: string;
+}
+
 export interface CardCarouselProps {
   id: string;
   type: "ComponentCardCarouselCardCarousel";
   itemsPerPage: number;
-  items: any[];
+  items: CardCarouselItemProps[];
   projects: { data: any[] };
 }
 

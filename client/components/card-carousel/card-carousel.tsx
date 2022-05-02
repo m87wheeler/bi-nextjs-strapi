@@ -1,6 +1,7 @@
 import * as React from "react";
 import useMediaQuery from "@m87wheeler/use-media-query";
 import CardCarouselItem from "./card-carousel-item";
+import { CardCarouselProps } from "../../types/cms-types";
 import {
   ButtonContainer,
   CarouselButton,
@@ -9,23 +10,27 @@ import {
   PlaneContainer,
   StyledCarouselProgress,
 } from "./styles";
-import { CardCarouselProps } from "../../types/cms-types";
 
 const CardCarousel = ({ ...props }: CardCarouselProps) => {
   const [activeIndex, setActiveIndex] = React.useState(0);
   const maxItems = useMediaQuery([1, 1, 2, props?.itemsPerPage ?? 3]);
 
   const cardItems = React.useMemo(() => {
-    const items = [
-      ...props?.items,
-      ...props?.projects?.data?.map(
-        (project) => project?.attributes?.carouselCard
-      ),
-    ];
-    return items;
-  }, [props?.items, props?.projects]);
+    const projects =
+      props?.projects?.data?.map((project) => ({
+        ...project?.attributes,
+        id: project?.id,
+        title:
+          project?.attributes?.carouselCard?.title ??
+          project?.attributes?.title,
+        image: project?.attributes?.carouselCard?.image,
+        link: `/projects/${
+          project?.attributes?.carouselCard?.link ?? project?.attributes?.link
+        }`,
+      })) ?? [];
 
-  console.log(cardItems);
+    return [...props?.items, ...projects];
+  }, [props?.items, props?.projects]);
 
   const handleActiveIndex = React.useCallback(
     (n: number) => () => {
@@ -44,13 +49,15 @@ const CardCarousel = ({ ...props }: CardCarouselProps) => {
       </ButtonContainer>
       <PlaneContainer>
         <CarouselPlane activeIndex={activeIndex}>
-          {cardItems.map((item, i) => (
-            <CardCarouselItem
-              key={i}
-              inView={i >= activeIndex && i < activeIndex + (maxItems ?? 1)}
-              {...item}
-            />
-          ))}
+          {cardItems.map((item, i) => {
+            return (
+              <CardCarouselItem
+                key={i}
+                inView={i >= activeIndex && i < activeIndex + (maxItems ?? 1)}
+                {...item}
+              />
+            );
+          })}
         </CarouselPlane>
       </PlaneContainer>
       <ButtonContainer>
