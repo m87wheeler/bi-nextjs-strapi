@@ -49,15 +49,13 @@ const CardCarousel = ({ ...props }: CardCarouselProps) => {
       </ButtonContainer>
       <PlaneContainer>
         <CarouselPlane activeIndex={activeIndex}>
-          {cardItems.map((item, i) => {
-            return (
-              <CardCarouselItem
-                key={i}
-                inView={i >= activeIndex && i < activeIndex + (maxItems ?? 1)}
-                {...item}
-              />
-            );
-          })}
+          {cardItems.map((item, i) => (
+            <CardCarouselItem
+              key={i}
+              inView={i >= activeIndex && i < activeIndex + (maxItems ?? 1)}
+              {...item}
+            />
+          ))}
         </CarouselPlane>
       </PlaneContainer>
       <ButtonContainer>
