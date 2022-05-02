@@ -18,7 +18,7 @@ const CardCarouselItem = ({ inView, ...props }: Props) => {
   return (
     <LinkType href={props?.link} {...props}>
       <CarouselCardContainer inView={inView}>
-        <CarouselCardImage image={getStrapiMedia(props?.image)} />
+        <CarouselCardImage image={getStrapiMedia(props?.image?.data)} />
         <CarouselCardTitle>{props?.title}</CarouselCardTitle>
       </CarouselCardContainer>
     </LinkType>

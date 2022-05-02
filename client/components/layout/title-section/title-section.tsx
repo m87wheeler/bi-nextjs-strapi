@@ -8,7 +8,9 @@ const TitleSection = ({ ...props }: TitleSectionProps) => {
   return (
     <Section styles={props?.styles}>
       <GridItem columnStart={2} columnSpan={10}>
-        <Typography {...props}>{props?.text}</Typography>
+        <Typography {...props} weight={400}>
+          {props?.text}
+        </Typography>
       </GridItem>
     </Section>
   );
