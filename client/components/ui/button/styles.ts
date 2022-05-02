@@ -4,7 +4,7 @@ export const ButtonContainer = styled.button<{
   buttonBackground?: string;
   borderAndText?: string;
 }>`
-  padding: 0.5rem 2rem;
+  padding: 0.75rem 2rem;
   min-width: 8rem;
   font-size: 0.9rem;
   text-transform: uppercase;

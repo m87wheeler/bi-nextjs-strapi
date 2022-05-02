@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_styles_shared_styles",
+  "info": {
+    "displayName": "sharedStyles",
+    "icon": "paint-roller"
+  },
+  "options": {},
+  "attributes": {
+    "stickToTop": {
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    "background": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary",
+        "white",
+        "none"
+      ]
+    }
+  }
+}

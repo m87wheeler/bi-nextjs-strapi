@@ -47,6 +47,11 @@
         "right",
         "center"
       ]
+    },
+    "styles": {
+      "type": "component",
+      "repeatable": false,
+      "component": "styles.shared-styles"
     }
   }
 }

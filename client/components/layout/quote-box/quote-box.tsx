@@ -8,8 +8,9 @@ import Section from "../section/section";
 interface Props extends QuoteBoxProps {}
 
 const QuoteBox = ({ ...props }: Props) => {
+  console.log("quoteBox", props);
   return (
-    <Section background={props?.quoteBackground}>
+    <Section background={props?.quoteBackground} {...props}>
       <GridItem columnStart={4} columnSpan={6}>
         <Image
           src="/assets/icons/quote-mark.svg"

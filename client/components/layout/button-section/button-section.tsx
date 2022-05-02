@@ -1,16 +1,17 @@
 import * as React from "react";
-import { ButtonProps } from "../../../types/cms-types";
+import { ButtonSectionProps } from "../../../types/cms-types";
 import GridItem from "../grid/grid-item";
 import Button from "../../ui/button/button";
 import Section from "../section/section";
 
-interface Props extends ButtonProps {}
+interface Props extends ButtonSectionProps {}
 
 const ButtonSection = ({ ...props }: Props) => {
+  console.log("ButtonSection", props);
   return (
-    <Section stickToTop={props?.stickToTop}>
+    <Section styles={props?.styles}>
       <GridItem columnStart={2} columnSpan={10}>
-        <Button {...props}>{props?.text}</Button>
+        <Button {...props?.button}>{props?.button?.text}</Button>
       </GridItem>
     </Section>
   );

@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_section_button_sections",
+  "info": {
+    "displayName": "buttonSection",
+    "icon": "hand-point-down"
+  },
+  "options": {},
+  "attributes": {
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.button"
+    },
+    "styles": {
+      "type": "component",
+      "repeatable": false,
+      "component": "styles.shared-styles"
+    }
+  }
+}

@@ -2,13 +2,19 @@
   "collectionName": "components_layout_free_texts",
   "info": {
     "displayName": "freeText",
-    "icon": "pen"
+    "icon": "pen",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "content": {
       "type": "richtext",
       "required": true
+    },
+    "styles": {
+      "type": "component",
+      "repeatable": false,
+      "component": "styles.shared-styles"
     }
   }
 }

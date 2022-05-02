@@ -8,6 +8,11 @@ type ImageProps = {
 
 export type ColorProps = "primary" | "secondary" | "white" | "none";
 
+export type SharedStylesProps = {
+  stickToTop?: boolean;
+  background: ColorProps;
+};
+
 export interface TwoColumnProps {
   id: string;
   type: "ComponentLayoutTwoColumn";
@@ -17,6 +22,7 @@ export interface TwoColumnProps {
   column: any[];
   button?: Object;
   buttonColumn?: "left" | "center" | "right";
+  styles?: SharedStylesProps;
 }
 
 export interface CardCarouselItemProps {
@@ -33,16 +39,21 @@ export interface CardCarouselProps {
   itemsPerPage: number;
   items: CardCarouselItemProps[];
   projects: { data: any[] };
+  styles?: SharedStylesProps;
 }
 
 export interface ButtonProps {
-  type: "ComponentUiButton";
-  id: string;
   text: string;
   link: string;
   borderAndText: ColorProps;
   buttonBackground: ColorProps;
-  stickToTop: boolean;
+}
+
+export interface ButtonSectionProps {
+  type: "ComponentSectionButtonSection";
+  id: string;
+  button: ButtonProps;
+  styles?: SharedStylesProps;
 }
 
 export interface QuoteBoxProps {
@@ -50,10 +61,11 @@ export interface QuoteBoxProps {
   quote: string;
   clientName: string;
   quoteBackground: ColorProps;
+  styles?: SharedStylesProps;
 }
 
 export type ComponentTypes =
   | TwoColumnProps
   | CardCarouselProps
-  | ButtonProps
+  | ButtonSectionProps
   | QuoteBoxProps;

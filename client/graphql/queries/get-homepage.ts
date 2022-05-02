@@ -36,11 +36,23 @@ export const getHomepage = gql`
                   content
                 }
               }
+              styles {
+                ... on ComponentStylesSharedStyles {
+                  stickToTop
+                  background
+                }
+              }
             }
             ... on ComponentLayoutFreeText {
               type: __typename
               id
               content
+              styles {
+                ... on ComponentStylesSharedStyles {
+                  stickToTop
+                  background
+                }
+              }
             }
             ... on ComponentCardCarouselCardCarousel {
               type: __typename
@@ -83,22 +95,41 @@ export const getHomepage = gql`
                   }
                 }
               }
+              styles {
+                ... on ComponentStylesSharedStyles {
+                  stickToTop
+                  background
+                }
+              }
             }
-            ... on ComponentUiButton {
+            ... on ComponentSectionButtonSection {
               type: __typename
               id
-              text
-              link
-              borderAndText
-              buttonBackground: background
-              stickToTop
+              button {
+                ... on ComponentUiButton {
+                  id
+                  text
+                  link
+                  borderAndText
+                  background
+                }
+              }
+              styles {
+                stickToTop
+                background
+              }
             }
             ... on ComponentSectionQuoteBox {
               type: __typename
               id
               quote
               clientName
-              quoteBackground: background
+              styles {
+                ... on ComponentStylesSharedStyles {
+                  stickToTop
+                  background
+                }
+              }
             }
           }
         }

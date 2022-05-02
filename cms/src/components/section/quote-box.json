@@ -11,19 +11,15 @@
       "type": "text",
       "required": true
     },
-    "background": {
-      "type": "enumeration",
-      "enum": [
-        "primary",
-        "secondary",
-        "white",
-        "none"
-      ]
-    },
     "clientName": {
       "type": "string",
       "required": false,
       "maxLength": 255
+    },
+    "styles": {
+      "type": "component",
+      "repeatable": false,
+      "component": "styles.shared-styles"
     }
   }
 }

@@ -17,7 +17,7 @@ const Rendering = ({ components = [] }: Props) => {
         return <TwoColumn {...component} />;
       case "ComponentCardCarouselCardCarousel":
         return <CardCarousel {...component} />;
-      case "ComponentUiButton":
+      case "ComponentSectionButtonSection":
         return <ButtonSection {...component} />;
       case "ComponentSectionQuoteBox":
         return <QuoteBox {...component} />;

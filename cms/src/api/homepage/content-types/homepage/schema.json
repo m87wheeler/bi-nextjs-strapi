@@ -47,8 +47,8 @@
         "card-carousel.card-carousel",
         "layout.free-text",
         "layout.two-column",
-        "ui.button",
-        "section.quote-box"
+        "section.quote-box",
+        "section.button-section"
       ]
     },
     "metaData": {
