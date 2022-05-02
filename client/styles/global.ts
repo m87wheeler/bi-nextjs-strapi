@@ -32,7 +32,7 @@ export const GlobalReset = createGlobalStyle`
         --color-none: transparent;
 
         --section-padding-x: 0;
-        --section-padding-top: 3rem;
-        --section-padding-bottom: 3rem;
+        --section-padding-top: 6rem;
+        --section-padding-bottom: 5rem;
     }
 `;

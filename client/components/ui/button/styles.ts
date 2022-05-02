@@ -13,4 +13,5 @@ export const ButtonContainer = styled.button<{
     `var(--color-${buttonBackground})`};
   border: 2px solid;
   border-color: ${({ borderAndText }) => `var(--color-${borderAndText})`};
+  cursor: pointer;
 `;

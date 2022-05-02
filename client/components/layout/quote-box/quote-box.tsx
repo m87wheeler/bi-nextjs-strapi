@@ -9,7 +9,6 @@ import { QuoteContainer } from "./styles";
 interface Props extends QuoteBoxProps {}
 
 const QuoteBox = ({ ...props }: Props) => {
-  console.log("quoteBox", props);
   return (
     <Section {...props}>
       <GridItem columnStart={4} columnSpan={6}>
