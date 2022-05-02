@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_layout_free_texts",
+  "info": {
+    "displayName": "freeText",
+    "icon": "pen"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}

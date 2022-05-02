@@ -9,7 +9,8 @@ const DangerousHtml = ({ html, ...props }: Props) => {
     const firstParse = str.replaceAll('src="/uploads', `src=\"${host}/uploads`);
     const secondParse = firstParse.replaceAll(
       'srcset="/uploads',
-      `srcset=\"${host}/uploads`
+      'srcset="/uploads'
+      //   `srcset=\"${host}/uploads`
     );
     console.log(secondParse);
     return secondParse;

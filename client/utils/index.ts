@@ -5,7 +5,17 @@ export const isExternalUrl = (url: string) => {
   return url.match(regex);
 };
 
-export const cmsAsset = (url?: string): string => {
-  if (!url) return "";
-  return `${"http://localhost:1337"}${url}`;
-};
+export function getStrapiURL(path = "") {
+  return `${
+    process.env.NEXT_PUBLIC_STRAPI_API_URL || "http://localhost:1337"
+  }${path}`;
+}
+
+export function getStrapiMedia(media?: {
+  data: { attributes: { url: string } };
+}) {
+  if (!media) return;
+  const { url } = media.data.attributes;
+  const imageUrl = url.startsWith("/") ? getStrapiURL(url) : url;
+  return imageUrl;
+}

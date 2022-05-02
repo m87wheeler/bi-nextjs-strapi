@@ -5,6 +5,20 @@ export type FontWeightType = 300 | 400 | 500 | 600 | "unset" | "inherit";
 export type ColourType = "primary" | "secondary" | "transparent";
 export type AlignType = "left" | "center" | "right";
 
+/** page props */
+export interface IPageProps {
+  title: string;
+  slug: string;
+  content: any[];
+  locale: string;
+  localizations: { data: { attributes: { locale: string } }[] };
+  metaData: {
+    metaTitle: string;
+    metaDescription: string;
+    metaKeywords?: string;
+  };
+}
+
 /** CMS UI Types */
 export type CmsButtonType = {
   text?: string;

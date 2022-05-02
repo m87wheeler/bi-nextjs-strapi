@@ -1,5 +1,5 @@
 import * as React from "react";
-import { cmsAsset } from "../../utils";
+import { getStrapiMedia } from "../../utils";
 import LinkType from "../link-type/link-type";
 import {
   CarouselCardTitle,
@@ -18,9 +18,7 @@ const CardCarouselItem = ({ inView, ...props }: Props) => {
   return (
     <LinkType href={props?.link} {...props}>
       <CarouselCardContainer inView={inView}>
-        <CarouselCardImage
-          image={cmsAsset(props?.image?.data?.attributes?.url)}
-        />
+        <CarouselCardImage image={getStrapiMedia(props?.image)} />
         <CarouselCardTitle>{props?.title}</CarouselCardTitle>
       </CarouselCardContainer>
     </LinkType>

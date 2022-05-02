@@ -14,8 +14,6 @@ interface Props {
 }
 
 const TwoColumn = ({ ...props }: Props) => {
-  console.log({ ...props });
-
   return (
     <Grid>
       {props?.columns?.map((col, i) => (

@@ -2,7 +2,8 @@
   "collectionName": "components_layout_content_columns",
   "info": {
     "displayName": "contentColumn",
-    "icon": "arrows-alt-v"
+    "icon": "align-justify",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -10,13 +11,14 @@
       "type": "integer",
       "required": true,
       "min": 1,
-      "max": 11
+      "default": 1
     },
     "columnSpan": {
       "type": "integer",
-      "required": true,
+      "max": 12,
+      "default": 12,
       "min": 1,
-      "max": 12
+      "required": true
     },
     "content": {
       "type": "richtext",

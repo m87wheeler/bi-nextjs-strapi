@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_card_carousel_card_carousels",
+  "info": {
+    "displayName": "cardCarousel",
+    "icon": "address-card",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "itemsPerPage": {
+      "type": "integer",
+      "required": true,
+      "default": 3,
+      "max": 3,
+      "min": 1
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "card-carousel.card-carousel-item"
+    },
+    "projects": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::project.project"
+    }
+  }
+}

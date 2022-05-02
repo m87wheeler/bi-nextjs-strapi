@@ -9,21 +9,19 @@
     "build": "strapi build",
     "strapi": "strapi"
   },
-  "devDependencies": {},
   "dependencies": {
     "@_sh/strapi-plugin-ckeditor": "^1.0.8",
-    "@exfabrica/strapi-plugin-awesome-help": "^1.0.8",
-    "@strapi/plugin-graphql": "^4.1.9",
+    "@strapi/plugin-graphql": "4.1.9",
     "@strapi/plugin-i18n": "4.1.9",
     "@strapi/plugin-users-permissions": "4.1.9",
     "@strapi/strapi": "4.1.9",
-    "better-sqlite3": "7.4.6"
+    "mysql": "2.18.1"
   },
   "author": {
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "c70049db-3362-4cad-8427-228121ba8452"
+    "uuid": "1116fb9b-f6f4-44c0-a9a4-9ca1a8e712c8"
   },
   "engines": {
     "node": ">=12.x.x <=16.x.x",

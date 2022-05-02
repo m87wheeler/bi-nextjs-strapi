@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_ui_buttons",
+  "info": {
+    "displayName": "button",
+    "icon": "eye"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "maxLength": 50
+    },
+    "link": {
+      "type": "string",
+      "required": true
+    },
+    "borderAndText": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary",
+        "white",
+        "none"
+      ]
+    },
+    "background": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary",
+        "white",
+        "none"
+      ]
+    }
+  }
+}
