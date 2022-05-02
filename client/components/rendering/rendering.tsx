@@ -31,9 +31,13 @@ const Rendering = ({ components = [] }: Props) => {
     }
   }, []);
 
-  return components.map((component, index) => {
-    return <Component {...component} key={index} />;
-  });
+  return (
+    <>
+      {components.map((component, index) => {
+        return <Component {...component} key={index} />;
+      })}
+    </>
+  );
 };
 
 export default Rendering;

@@ -1,6 +1,6 @@
 import Rendering from "../components/rendering/rendering";
 import apolloClient from "../graphql/client";
-import { getHomepage } from "../graphql/queries";
+import { getPrimaryPage } from "../graphql/queries";
 import { IPageProps } from "../types";
 
 interface Props extends IPageProps {
@@ -15,8 +15,8 @@ export async function getServerSideProps() {
   const locale = "en";
 
   const { data } = await apolloClient.query({
-    query: getHomepage,
-    variables: { locale },
+    query: getPrimaryPage,
+    variables: { locale, slug: `homepage` },
   });
 
   return {
