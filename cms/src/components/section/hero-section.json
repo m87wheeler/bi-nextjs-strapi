@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_section_hero_sections",
+  "info": {
+    "displayName": "heroSection",
+    "icon": "image",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "maxLength": 255,
+      "default": "BLUE INTERIORS"
+    },
+    "subTitle": {
+      "type": "string",
+      "default": "LONDON",
+      "maxLength": 255
+    },
+    "backgroundMedia": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "overlay": {
+      "type": "enumeration",
+      "enum": [
+        "black",
+        "white",
+        "none"
+      ],
+      "default": "none",
+      "required": true
+    }
+  }
+}

@@ -28,6 +28,9 @@ export const GlobalReset = createGlobalStyle`
 
         --color-white: ${theme.palette.white};
         --color-white-contrast: ${theme.palette.black};
+
+        --color-black: ${theme.palette.black};
+        --color-black-contrast: ${theme.palette.white};
         
         --color-none: transparent;
 

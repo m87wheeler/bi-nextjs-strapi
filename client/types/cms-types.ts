@@ -1,14 +1,23 @@
 import { TypographyType } from ".";
 
-type ImageProps = {
-  data: {
-    attributes: {
-      url: string;
-    };
+export interface BaseImageProps {
+  attributes: {
+    url: string;
+    mime?: string;
+    caption?: string;
   };
+}
+
+export type ImageProps = {
+  data: BaseImageProps;
+};
+
+export type ImageArrayProps = {
+  data: BaseImageProps[];
 };
 
 export type ColorProps = "primary" | "secondary" | "white" | "none";
+export type OverlayType = "black" | "white" | "none";
 
 export type SharedStylesProps = {
   stickToTop?: boolean;
@@ -18,6 +27,14 @@ export type SharedStylesProps = {
 export interface CmsComponentType {
   id: string;
   styles?: SharedStylesProps;
+}
+
+export interface HeroSectionType extends CmsComponentType {
+  type: "ComponentSectionHeroSection";
+  title: string;
+  subTitle: string;
+  backgroundMedia: ImageArrayProps;
+  overlay: OverlayType;
 }
 
 export interface TitleSectionProps extends CmsComponentType {
@@ -73,6 +90,7 @@ export interface QuoteBoxProps {
 }
 
 export type ComponentTypes =
+  | HeroSectionType
   | TitleSectionProps
   | TwoColumnProps
   | CardCarouselProps

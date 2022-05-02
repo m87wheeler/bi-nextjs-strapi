@@ -5,12 +5,13 @@ import Grid from "../grid/grid";
 
 interface Props {
   children?: React.ReactNode;
+  top?: boolean;
   styles?: SharedStylesProps;
 }
 
-const Section = ({ children, ...props }: Props) => {
+const Section = ({ children, top = false, ...props }: Props) => {
   return (
-    <Container {...props}>
+    <Container top={top} {...props}>
       <Grid>{children}</Grid>
     </Container>
   );

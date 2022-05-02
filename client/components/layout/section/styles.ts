@@ -4,6 +4,7 @@ import { SharedStylesProps } from "../../../types/cms-types";
 export const Container = styled.div<{
   stickToTop?: boolean;
   background?: string;
+  top?: boolean;
   styles?: SharedStylesProps;
 }>`
   display: flex;
@@ -18,5 +19,11 @@ export const Container = styled.div<{
       padding-top: ${styles?.stickToTop ? 0 : "var(--section-padding-top)"};
       margin-top: ${styles?.stickToTop ? "-1rem" : "0"};
       background-color: ${`var(--color-${styles?.background})`};
+    `}
+
+  ${({ top }) =>
+    top &&
+    css`
+      padding-top: 0;
     `}
 `;
