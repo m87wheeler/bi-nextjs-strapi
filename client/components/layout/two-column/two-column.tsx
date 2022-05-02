@@ -1,6 +1,6 @@
 import * as React from "react";
 import { TwoColumnProps } from "../../../types/cms-types";
-import DangerousHtml from "../../dangerous-html/dangerous-html";
+import DangerousHtml from "../../ui/dangerous-html/dangerous-html";
 import Grid from "../grid/grid";
 import GridItem from "../grid/grid-item";
 

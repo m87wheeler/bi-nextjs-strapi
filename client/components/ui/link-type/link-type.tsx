@@ -1,6 +1,6 @@
 import Link from "next/link";
 import * as React from "react";
-import { isExternalUrl } from "../../utils";
+import { isExternalUrl } from "../../../utils";
 
 interface Props {
   children?: React.ReactNode;

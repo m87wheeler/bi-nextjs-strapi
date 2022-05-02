@@ -1,6 +1,7 @@
 import * as React from "react";
-import { TypographyType } from "../../types";
-import { ColorProps } from "../../types/cms-types";
+import { TypographyType } from "../../../types";
+import { ColorProps } from "../../../types/cms-types";
+
 import {
   H1Element,
   H2Element,

@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { theme } from "../../styles/theme";
-import CarouselProgress from "../carousel/carousel-progress";
+import { theme } from "../../../styles/theme";
+import CarouselProgress from "../carousel-progress/carousel-progress";
 
 // *** *** *** *** *** ***
 // * Carousel Container

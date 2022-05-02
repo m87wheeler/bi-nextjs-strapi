@@ -4,7 +4,7 @@ import { HeroSectionType } from "../../../types/cms-types";
 import GridItem from "../grid/grid-item";
 import Section from "../section/section";
 import HeroMedia from "./hero-media";
-import Typography from "../../typography/typography";
+import Typography from "../../ui/typography/typography";
 
 const HeroSection = ({ ...props }: HeroSectionType) => {
   const textColor = React.useMemo(

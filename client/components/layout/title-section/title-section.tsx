@@ -1,6 +1,6 @@
 import * as React from "react";
 import { TitleSectionProps } from "../../../types/cms-types";
-import Typography from "../../typography/typography";
+import Typography from "../../ui/typography/typography";
 import GridItem from "../grid/grid-item";
 import Section from "../section/section";
 

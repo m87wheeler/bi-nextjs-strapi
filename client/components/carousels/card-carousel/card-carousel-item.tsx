@@ -1,6 +1,6 @@
 import * as React from "react";
-import { getStrapiMedia } from "../../utils";
-import LinkType from "../link-type/link-type";
+import { getStrapiMedia } from "../../../utils";
+import LinkType from "../../ui/link-type/link-type";
 import {
   CarouselCardTitle,
   CarouselCardImage,

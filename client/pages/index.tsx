@@ -2,6 +2,7 @@ import Rendering from "../components/rendering/rendering";
 import apolloClient from "../graphql/client";
 import { getPrimaryPage } from "../graphql/queries";
 import { IPageProps } from "../types";
+import { formatPrimaryPage } from "../utils";
 
 interface Props extends IPageProps {
   lang: string;
@@ -20,7 +21,7 @@ export async function getServerSideProps() {
   });
 
   return {
-    props: { ...data?.homepage?.data?.attributes, lang: locale },
+    props: { ...formatPrimaryPage(data), lang: locale },
   };
 }
 

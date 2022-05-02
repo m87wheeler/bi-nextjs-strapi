@@ -1,7 +1,7 @@
 import * as React from "react";
 import useMediaQuery from "@m87wheeler/use-media-query";
 import CardCarouselItem from "./card-carousel-item";
-import { CardCarouselProps } from "../../types/cms-types";
+import { CardCarouselProps } from "../../../types/cms-types";
 import {
   ButtonContainer,
   CarouselButton,
@@ -10,8 +10,8 @@ import {
   PlaneContainer,
   StyledCarouselProgress,
 } from "./styles";
-import Section from "../layout/section/section";
-import GridItem from "../layout/grid/grid-item";
+import Section from "../../layout/section/section";
+import GridItem from "../../layout/grid/grid-item";
 
 const CardCarousel = ({ ...props }: CardCarouselProps) => {
   const [activeIndex, setActiveIndex] = React.useState(0);

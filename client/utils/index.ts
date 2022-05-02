@@ -32,3 +32,7 @@ export function getStrapiMedia(media?: BaseImageProps): string {
   const imageUrl = url.startsWith("/") ? getStrapiURL(url) : url;
   return imageUrl;
 }
+
+export const formatPrimaryPage = (data: any) => {
+  return data?.primaryPages?.data?.[0]?.attributes ?? {};
+};

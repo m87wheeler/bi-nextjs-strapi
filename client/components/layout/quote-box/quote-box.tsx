@@ -1,7 +1,7 @@
 import Image from "next/image";
 import * as React from "react";
 import { QuoteBoxProps } from "../../../types/cms-types";
-import Typography from "../../typography/typography";
+import Typography from "../../ui/typography/typography";
 import GridItem from "../grid/grid-item";
 import Section from "../section/section";
 import { QuoteContainer } from "./styles";

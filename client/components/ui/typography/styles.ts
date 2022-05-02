@@ -1,12 +1,12 @@
 import styled, { css } from "styled-components";
-import { theme } from "../../styles/theme";
+import { theme } from "../../../styles/theme";
 import {
   AlignType,
   FontType,
   FontWeightType,
   TypographyType,
-} from "../../types";
-import { ColorProps } from "../../types/cms-types";
+} from "../../../types";
+import { ColorProps } from "../../../types/cms-types";
 
 export interface TypographyProps {
   variant?: TypographyType;
