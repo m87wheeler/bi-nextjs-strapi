@@ -9,39 +9,44 @@ import {
   PlaneContainer,
   StyledCarouselProgress,
 } from "./styles";
+import { CardCarouselProps } from "../../types/cms-types";
 
-interface Props {
-  itemsPerPage?: number;
-  cards?: any[];
-}
-
-const CardCarousel = ({ ...props }: Props) => {
+const CardCarousel = ({ ...props }: CardCarouselProps) => {
   const [activeIndex, setActiveIndex] = React.useState(0);
   const maxItems = useMediaQuery([1, 1, 2, props?.itemsPerPage ?? 3]);
+
+  const cardItems = React.useMemo(() => {
+    const items = [
+      ...props?.items,
+      ...props?.projects?.data?.map(
+        (project) => project?.attributes?.carouselCard
+      ),
+    ];
+    return items;
+  }, [props?.items, props?.projects]);
+
+  console.log(cardItems);
 
   const handleActiveIndex = React.useCallback(
     (n: number) => () => {
       if (activeIndex + n < 0) return;
-      if (
-        activeIndex + n >
-        (props?.cards?.length ?? 0) + 1 - ((maxItems ?? 1) + 1)
-      )
+      if (activeIndex + n > (cardItems.length ?? 0) + 1 - ((maxItems ?? 1) + 1))
         return;
       setActiveIndex((state) => state + n);
     },
-    [activeIndex, maxItems, props.cards]
+    [activeIndex, maxItems, cardItems]
   );
 
   return (
-    <CarouselContainer itemsPerPage={maxItems ?? 1} {...props}>
+    <CarouselContainer {...props} itemsPerPage={maxItems ?? 1}>
       <ButtonContainer>
         <CarouselButton onClick={handleActiveIndex(-1)}>P</CarouselButton>
       </ButtonContainer>
       <PlaneContainer>
         <CarouselPlane activeIndex={activeIndex}>
-          {props?.cards?.map((item, i) => (
+          {cardItems.map((item, i) => (
             <CardCarouselItem
-              key={item.id}
+              key={i}
               inView={i >= activeIndex && i < activeIndex + (maxItems ?? 1)}
               {...item}
             />
@@ -52,7 +57,7 @@ const CardCarousel = ({ ...props }: Props) => {
         <CarouselButton onClick={handleActiveIndex(1)}>N</CarouselButton>
       </ButtonContainer>
       <StyledCarouselProgress
-        items={props?.cards?.length ?? 0}
+        items={cardItems.length ?? 0}
         currentItem={activeIndex}
         itemsPerPage={maxItems ?? 1}
       />

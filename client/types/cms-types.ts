@@ -9,4 +9,12 @@ export interface TwoColumnProps {
   buttonColumn?: "left" | "center" | "right";
 }
 
-export type ComponentTypes = TwoColumnProps;
+export interface CardCarouselProps {
+  id: string;
+  type: "ComponentCardCarouselCardCarousel";
+  itemsPerPage: number;
+  items: any[];
+  projects: { data: any[] };
+}
+
+export type ComponentTypes = TwoColumnProps | CardCarouselProps;
