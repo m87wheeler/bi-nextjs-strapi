@@ -1,8 +1,8 @@
 import * as React from "react";
 import { TwoColumnProps } from "../../../types/cms-types";
 import DangerousHtml from "../../dangerous-html/dangerous-html";
-import Grid from "../../grid/grid";
-import GridItem from "../../grid/grid-item";
+import Grid from "../grid/grid";
+import GridItem from "../grid/grid-item";
 
 const TwoColumn = ({ ...props }: TwoColumnProps) => {
   const handleTitlePlacement = React.useCallback(

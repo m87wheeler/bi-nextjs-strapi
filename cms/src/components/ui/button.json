@@ -2,7 +2,8 @@
   "collectionName": "components_ui_buttons",
   "info": {
     "displayName": "button",
-    "icon": "eye"
+    "icon": "eye",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -21,7 +22,9 @@
         "secondary",
         "white",
         "none"
-      ]
+      ],
+      "required": true,
+      "default": "white"
     },
     "background": {
       "type": "enumeration",
@@ -30,7 +33,13 @@
         "secondary",
         "white",
         "none"
-      ]
+      ],
+      "required": true,
+      "default": "primary"
+    },
+    "stickToTop": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

@@ -44,9 +44,10 @@
       },
       "type": "dynamiczone",
       "components": [
-        "layout.two-column",
         "card-carousel.card-carousel",
-        "layout.free-text"
+        "layout.free-text",
+        "layout.two-column",
+        "ui.button"
       ]
     },
     "metaData": {

@@ -18,4 +18,15 @@ export const GlobalReset = createGlobalStyle`
         text-decoration: none;
         cursor: pointer;
     }
+
+    :root {
+        --color-primary: ${theme.palette.primary._};
+        --color-secondary: ${theme.palette.primary._};
+        --color-white: ${theme.palette.white};
+        --color-none: transparent;
+
+        --section-padding-x: 0;
+        --section-padding-top: 4rem;
+        --section-padding-bottom: 2rem;
+    }
 `;

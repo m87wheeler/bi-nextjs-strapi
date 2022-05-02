@@ -84,6 +84,15 @@ export const getHomepage = gql`
                 }
               }
             }
+            ... on ComponentUiButton {
+              type: __typename
+              id
+              text
+              link
+              borderAndText
+              background
+              stickToTop
+            }
           }
         }
       }

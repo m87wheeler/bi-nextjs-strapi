@@ -10,6 +10,8 @@ import {
   PlaneContainer,
   StyledCarouselProgress,
 } from "./styles";
+import Section from "../layout/section/section";
+import GridItem from "../layout/grid/grid-item";
 
 const CardCarousel = ({ ...props }: CardCarouselProps) => {
   const [activeIndex, setActiveIndex] = React.useState(0);
@@ -43,30 +45,34 @@ const CardCarousel = ({ ...props }: CardCarouselProps) => {
   );
 
   return (
-    <CarouselContainer {...props} itemsPerPage={maxItems ?? 1}>
-      <ButtonContainer>
-        <CarouselButton onClick={handleActiveIndex(-1)}>P</CarouselButton>
-      </ButtonContainer>
-      <PlaneContainer>
-        <CarouselPlane activeIndex={activeIndex}>
-          {cardItems.map((item, i) => (
-            <CardCarouselItem
-              key={i}
-              inView={i >= activeIndex && i < activeIndex + (maxItems ?? 1)}
-              {...item}
-            />
-          ))}
-        </CarouselPlane>
-      </PlaneContainer>
-      <ButtonContainer>
-        <CarouselButton onClick={handleActiveIndex(1)}>N</CarouselButton>
-      </ButtonContainer>
-      <StyledCarouselProgress
-        items={cardItems.length ?? 0}
-        currentItem={activeIndex}
-        itemsPerPage={maxItems ?? 1}
-      />
-    </CarouselContainer>
+    <Section>
+      <GridItem>
+        <CarouselContainer {...props} itemsPerPage={maxItems ?? 1}>
+          <ButtonContainer>
+            <CarouselButton onClick={handleActiveIndex(-1)}>P</CarouselButton>
+          </ButtonContainer>
+          <PlaneContainer>
+            <CarouselPlane activeIndex={activeIndex}>
+              {cardItems.map((item, i) => (
+                <CardCarouselItem
+                  key={i}
+                  inView={i >= activeIndex && i < activeIndex + (maxItems ?? 1)}
+                  {...item}
+                />
+              ))}
+            </CarouselPlane>
+          </PlaneContainer>
+          <ButtonContainer>
+            <CarouselButton onClick={handleActiveIndex(1)}>N</CarouselButton>
+          </ButtonContainer>
+          <StyledCarouselProgress
+            items={cardItems.length ?? 0}
+            currentItem={activeIndex}
+            itemsPerPage={maxItems ?? 1}
+          />
+        </CarouselContainer>
+      </GridItem>
+    </Section>
   );
 };
 

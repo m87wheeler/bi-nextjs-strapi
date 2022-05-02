@@ -1,18 +1,22 @@
 import * as React from "react";
 import styled from "styled-components";
-import { IContentColumn } from "../../types";
+import { GridItemProps } from "../../../types";
 
 const Container = styled.div<{ start: number; span: number }>`
-  grid-column: ${({ start, span }) => `${start} / span ${span}`};
   width: 100%;
   height: 100%;
+  grid-column: ${({ start, span }) => `${start} / span ${span}`};
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
 `;
 
-interface Props extends IContentColumn {
-  children?: React.ReactNode;
-}
-
-const GridItem = ({ columnStart, columnSpan, children }: Props) => {
+const GridItem = ({
+  columnStart = 2,
+  columnSpan = 10,
+  children,
+}: GridItemProps) => {
   return (
     <Container start={columnStart} span={columnSpan}>
       {children}

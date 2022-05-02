@@ -6,6 +6,8 @@ type ImageProps = {
   };
 };
 
+export type ColorProps = "primary" | "secondary" | "white" | "none";
+
 export interface TwoColumnProps {
   id: string;
   type: "ComponentLayoutTwoColumn";
@@ -25,6 +27,16 @@ export interface CardCarouselItemProps {
   link?: string;
 }
 
+export interface ButtonProps {
+  type: "ComponentUiButton";
+  id: string;
+  text: string;
+  link: string;
+  borderAndText: ColorProps;
+  background: ColorProps;
+  stickToTop: boolean;
+}
+
 export interface CardCarouselProps {
   id: string;
   type: "ComponentCardCarouselCardCarousel";
@@ -33,4 +45,4 @@ export interface CardCarouselProps {
   projects: { data: any[] };
 }
 
-export type ComponentTypes = TwoColumnProps | CardCarouselProps;
+export type ComponentTypes = TwoColumnProps | CardCarouselProps | ButtonProps;
