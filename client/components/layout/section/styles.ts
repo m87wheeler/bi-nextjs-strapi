@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { SharedStylesProps } from "../../../types/cms-types";
 
 export const Container = styled.div<{
@@ -11,7 +11,11 @@ export const Container = styled.div<{
   justify-content: center;
   padding: var(--section-padding-top) var(--section-padding-x)
     var(--section-padding-bottom);
-  padding-top: ${({ styles }) =>
-    styles?.stickToTop ? 0 : "var(--section-padding-top)"};
-  background-color: ${({ background }) => `var(--color-${background})`};
+
+  ${({ styles }) =>
+    styles &&
+    css`
+      padding-top: ${styles?.stickToTop ? 0 : "var(--section-padding-top)"};
+      background-color: ${`var(--color-${styles?.background})`};
+    `}
 `;

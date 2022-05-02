@@ -10,7 +10,7 @@ interface Props {
 }
 
 const Rendering = ({ components = [] }: Props) => {
-  console.log("Rendering", components);
+  // console.log("Rendering", components);
   const Component = React.useCallback((component: ComponentTypes) => {
     switch (component.type) {
       case "ComponentLayoutTwoColumn":

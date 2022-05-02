@@ -7,7 +7,6 @@ import Section from "../section/section";
 interface Props extends ButtonSectionProps {}
 
 const ButtonSection = ({ ...props }: Props) => {
-  console.log("ButtonSection", props);
   return (
     <Section styles={props?.styles}>
       <GridItem columnStart={2} columnSpan={10}>

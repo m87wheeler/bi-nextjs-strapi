@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
-export const Text = styled.p``;
+export const QuoteContainer = styled.div`
+  padding-bottom: 1rem;
 
-export const QuoteText = styled(Text)``;
-
-export const ClientNameText = styled(Text)``;
+  &:nth-of-type(2) {
+    transform: rotate(180deg);
+  }
+`;
