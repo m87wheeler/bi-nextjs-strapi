@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_section_quote_boxes",
+  "info": {
+    "displayName": "quoteBox",
+    "icon": "quote-left",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "quote": {
+      "type": "text",
+      "required": true
+    },
+    "background": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary",
+        "white",
+        "none"
+      ]
+    },
+    "clientName": {
+      "type": "string",
+      "required": false,
+      "maxLength": 255
+    }
+  }
+}

@@ -90,8 +90,15 @@ export const getHomepage = gql`
               text
               link
               borderAndText
-              background
+              buttonBackground: background
               stickToTop
+            }
+            ... on ComponentSectionQuoteBox {
+              type: __typename
+              id
+              quote
+              clientName
+              quoteBackground: background
             }
           }
         }

@@ -27,16 +27,6 @@ export interface CardCarouselItemProps {
   link?: string;
 }
 
-export interface ButtonProps {
-  type: "ComponentUiButton";
-  id: string;
-  text: string;
-  link: string;
-  borderAndText: ColorProps;
-  background: ColorProps;
-  stickToTop: boolean;
-}
-
 export interface CardCarouselProps {
   id: string;
   type: "ComponentCardCarouselCardCarousel";
@@ -45,4 +35,25 @@ export interface CardCarouselProps {
   projects: { data: any[] };
 }
 
-export type ComponentTypes = TwoColumnProps | CardCarouselProps | ButtonProps;
+export interface ButtonProps {
+  type: "ComponentUiButton";
+  id: string;
+  text: string;
+  link: string;
+  borderAndText: ColorProps;
+  buttonBackground: ColorProps;
+  stickToTop: boolean;
+}
+
+export interface QuoteBoxProps {
+  type: "ComponentSectionQuoteBox";
+  quote: string;
+  clientName: string;
+  quoteBackground: ColorProps;
+}
+
+export type ComponentTypes =
+  | TwoColumnProps
+  | CardCarouselProps
+  | ButtonProps
+  | QuoteBoxProps;

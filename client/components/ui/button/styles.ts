@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ButtonContainer = styled.button<{
-  background?: string;
+  buttonBackground?: string;
   borderAndText?: string;
 }>`
   padding: 0.5rem 2rem;
@@ -9,7 +9,8 @@ export const ButtonContainer = styled.button<{
   font-size: 0.9rem;
   text-transform: uppercase;
   color: ${({ borderAndText }) => `var(--color-${borderAndText})`};
-  background-color: ${({ background }) => `var(--color-${background})`};
+  background-color: ${({ buttonBackground }) =>
+    `var(--color-${buttonBackground})`};
   border: 2px solid;
   border-color: ${({ borderAndText }) => `var(--color-${borderAndText})`};
 `;

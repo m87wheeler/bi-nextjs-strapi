@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
-export const Container = styled.div<{ stickToTop?: boolean }>`
+export const Container = styled.div<{
+  stickToTop?: boolean;
+  background?: string;
+}>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -8,4 +11,5 @@ export const Container = styled.div<{ stickToTop?: boolean }>`
     var(--section-padding-bottom);
   padding-top: ${({ stickToTop }) =>
     stickToTop ? 0 : "var(--section-padding-top)"};
+  background-color: ${({ background }) => `var(--color-${background})`};
 `;

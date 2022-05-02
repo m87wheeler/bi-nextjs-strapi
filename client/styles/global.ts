@@ -21,12 +21,18 @@ export const GlobalReset = createGlobalStyle`
 
     :root {
         --color-primary: ${theme.palette.primary._};
+        --color-primary-contrast: ${theme.palette.primary.contrast};
+
         --color-secondary: ${theme.palette.primary._};
+        --color-secondary-contrast: ${theme.palette.primary.contrast};
+
         --color-white: ${theme.palette.white};
+        --color-white-contrast: ${theme.palette.black};
+        
         --color-none: transparent;
 
         --section-padding-x: 0;
-        --section-padding-top: 4rem;
-        --section-padding-bottom: 2rem;
+        --section-padding-top: 3rem;
+        --section-padding-bottom: 3rem;
     }
 `;

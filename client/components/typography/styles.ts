@@ -1,18 +1,34 @@
 import styled, { css } from "styled-components";
 import { theme } from "../../styles/theme";
-import { FontType, FontWeightType, TypographyType } from "../../types";
+import {
+  AlignType,
+  FontType,
+  FontWeightType,
+  TypographyType,
+} from "../../types";
+import { ColorProps } from "../../types/cms-types";
 
-interface TypographyProps {
-  variant: TypographyType;
-  font: FontType;
+export interface TypographyProps {
+  variant?: TypographyType;
+  font?: FontType;
   weight?: FontWeightType;
+  align?: AlignType;
+  color?: ColorProps;
 }
 
-const typographyStyles = ({ variant, font, weight }: TypographyProps) => css`
+const typographyStyles = ({
+  variant = "p",
+  font = "sans",
+  weight,
+  align = "left",
+  color,
+}: TypographyProps) => css`
   font-family: ${theme.font.family[font]};
   font-size: ${theme.font.size[variant]};
   font-weight: ${weight ?? "auto"};
   line-height: ${theme.font.height[variant]};
+  text-align: ${align};
+  color: ${`var(--color-${color}-contrast)`};
 `;
 
 export const H1Element = styled.h1<TypographyProps>`
