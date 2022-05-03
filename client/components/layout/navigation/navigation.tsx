@@ -1,27 +1,41 @@
-import Link from "next/link";
 import * as React from "react";
-import styled from "styled-components";
+import Link from "next/link";
+import Grid from "../grid/grid";
+import GridItem from "../grid/grid-item";
 import { NavigationLinksType } from "../../../types";
-
-const NavContainer = styled.nav``;
+import { LinksList, NavContainer } from "./styles";
 
 interface Props {
   links: NavigationLinksType[];
 }
 
 const Navigation = ({ ...props }: Props) => {
-  console.log({ ...props });
   return (
     <NavContainer>
-      <ul>
-        {props?.links
-          ?.filter((link) => link?.showInNavigation)
-          ?.map((link, i) => (
-            <li key={i}>
-              <Link href={`/${link?.slug ?? ""}`}>{link?.navigationText}</Link>
+      <Grid>
+        <GridItem columnStart={3} columnSpan={8}>
+          <LinksList>
+            {props?.links
+              ?.filter((link) => link?.showInNavigation)
+              ?.map((link, i) => (
+                <li key={i}>
+                  <Link href={`/${link?.slug ?? ""}`}>
+                    {link?.navigationText}
+                  </Link>
+                </li>
+              ))}
+            <li>
+              <Link href={`/`}>Services</Link>
             </li>
-          ))}
-      </ul>
+            <li>
+              <Link href={`/`}>Blog</Link>
+            </li>
+            <li>
+              <Link href={`/`}>Contact</Link>
+            </li>
+          </LinksList>
+        </GridItem>
+      </Grid>
     </NavContainer>
   );
 };
