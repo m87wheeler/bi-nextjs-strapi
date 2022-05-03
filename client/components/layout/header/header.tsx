@@ -6,6 +6,7 @@ import Navigation from "../navigation/navigation";
 import Link from "next/link";
 import Grid from "../grid/grid";
 import GridItem from "../grid/grid-item";
+import { ScrollContext } from "../../../context/scroll-context";
 
 interface Props {
   links: NavigationLinksType[];
@@ -14,11 +15,12 @@ interface Props {
 
 const Header = ({ ...props }: Props) => {
   const { ref, inView } = useInView();
+  const { backgroundColor } = React.useContext(ScrollContext);
 
   return (
     <>
       <Navigation links={props?.links} ref={ref} />
-      <HeaderContainer inView={inView} {...props}>
+      <HeaderContainer inView={inView} variant={backgroundColor} {...props}>
         <Grid>
           <GridItem columnStart={2} columnSpan={3} align="flex-start">
             <h1>BI</h1>

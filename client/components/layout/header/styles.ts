@@ -1,6 +1,24 @@
 import styled, { css } from "styled-components";
 
-export const HeaderContainer = styled.header<{ inView: boolean }>`
+export const LinksList = styled.ul`
+  display: flex;
+  flex-flow: row nowrap;
+  list-style-type: none;
+  gap: 2rem;
+
+  li {
+    a {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+`;
+
+export const HeaderContainer = styled.header<{
+  inView: boolean;
+  variant: "primary" | "white";
+}>`
   --header-height: 4rem;
 
   position: fixed;
@@ -12,10 +30,11 @@ export const HeaderContainer = styled.header<{ inView: boolean }>`
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--color-white);
+  background-color: ${(p) => `var(--color-${p.variant})`};
   transform: translateY(0);
   opacity: 1;
-  transition: transform 500ms ease-in-out, opacity 750ms ease-in-out;
+  transition: transform 500ms ease-in-out, opacity 750ms ease-in-out,
+    background-color 300ms ease-in-out;
   z-index: 99999;
 
   ${({ inView }) =>
@@ -24,20 +43,11 @@ export const HeaderContainer = styled.header<{ inView: boolean }>`
       opacity: 0;
       transform: translateY(calc(var(--header-height) * -1));
     `}
-`;
 
-export const LinksList = styled.ul`
-  display: flex;
-  flex-flow: row nowrap;
-  list-style-type: none;
-  gap: 2rem;
-
-  li {
-    a {
-      color: var(--color-primary);
-
-      &:hover {
-        text-decoration: underline;
+  ${LinksList} {
+    li {
+      a {
+        color: ${(p) => `var(--color-${p.variant}-contrast)`};
       }
     }
   }
