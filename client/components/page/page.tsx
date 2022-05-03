@@ -1,4 +1,5 @@
 import * as React from "react";
+import Header from "../layout/header/header";
 import Navigation from "../layout/navigation/navigation";
 import { PageContainer } from "./styles";
 
@@ -10,7 +11,8 @@ interface Props {
 const Page = ({ navigation, children, ...props }: Props) => {
   return (
     <PageContainer {...props}>
-      <Navigation links={navigation} />
+      {/* <Navigation links={navigation} /> */}
+      <Header links={navigation} />
       <main>{children}</main>
       <footer>
         <p>&copy; 2022</p>

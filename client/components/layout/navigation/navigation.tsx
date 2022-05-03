@@ -9,9 +9,9 @@ interface Props {
   links: NavigationLinksType[];
 }
 
-const Navigation = ({ ...props }: Props) => {
+const Navigation = React.forwardRef<HTMLElement, Props>((props, ref) => {
   return (
-    <NavContainer>
+    <NavContainer ref={ref}>
       <Grid>
         <GridItem columnStart={3} columnSpan={8}>
           <LinksList>
@@ -38,6 +38,7 @@ const Navigation = ({ ...props }: Props) => {
       </Grid>
     </NavContainer>
   );
-};
+});
+Navigation.displayName = "Navigation";
 
 export default Navigation;

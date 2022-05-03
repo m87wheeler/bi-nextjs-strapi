@@ -20,7 +20,7 @@ const LinkType = ({ href, blank = true, children }: Props) => {
   }
 
   return (
-    <Link href={href}>
+    <Link href={href} passHref>
       <div style={{ cursor: "pointer" }}>{children}</div>
     </Link>
   );
