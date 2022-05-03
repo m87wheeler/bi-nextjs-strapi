@@ -1,9 +1,9 @@
 import * as React from "react";
 import { Container } from "./styles";
+import { useInView } from "react-intersection-observer";
+import { ScrollContext } from "../../../context/scroll-context";
 import { SharedStylesProps } from "../../../types/cms-types";
 import Grid from "../grid/grid";
-import { ScrollContext } from "../../../context/scroll-context";
-import { useScrollToView } from "../../../hooks/use-scroll-to-view";
 
 interface Props {
   children?: React.ReactNode;
@@ -13,7 +13,7 @@ interface Props {
 
 const Section = ({ children, top = false, ...props }: Props) => {
   const { setBackgroundColor } = React.useContext(ScrollContext);
-  const { ref, inView } = useScrollToView();
+  const { ref, inView } = useInView({ rootMargin: "0px 0px -100%" });
 
   React.useEffect(() => {
     if (typeof window === "undefined") return;

@@ -1,8 +1,8 @@
 import * as React from "react";
 import { TwoColumnProps } from "../../../types/cms-types";
 import DangerousHtml from "../../ui/dangerous-html/dangerous-html";
-import Grid from "../grid/grid";
 import GridItem from "../grid/grid-item";
+import Section from "../section/section";
 
 const TwoColumn = ({ ...props }: TwoColumnProps) => {
   const handleTitlePlacement = React.useCallback(
@@ -21,14 +21,14 @@ const TwoColumn = ({ ...props }: TwoColumnProps) => {
   );
 
   return (
-    <Grid>
+    <Section>
       {props?.column?.map((col, i) => (
         <GridItem key={i} align={props?.titleAlign} {...col}>
           {handleTitlePlacement(i, props?.titleColumn)}
           <DangerousHtml html={col.content} />
         </GridItem>
       ))}
-    </Grid>
+    </Section>
   );
 };
 

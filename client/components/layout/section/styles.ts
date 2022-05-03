@@ -13,7 +13,7 @@ export const Container = styled.div<{
   padding: var(--section-padding-top) var(--section-padding-x)
     var(--section-padding-bottom);
 
-  ${({ styles }) =>
+  ${({ styles, top }) =>
     styles &&
     css`
       padding-top: ${styles?.stickToTop ? 0 : "var(--section-padding-top)"};
