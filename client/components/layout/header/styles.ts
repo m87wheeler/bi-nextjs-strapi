@@ -8,6 +8,10 @@ export const HeaderContainer = styled.header<{ inView: boolean }>`
   left: 0;
   width: 100%;
   height: var(--header-height);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
   background-color: var(--color-white);
   transform: translateY(0);
   opacity: 1;
@@ -20,4 +24,21 @@ export const HeaderContainer = styled.header<{ inView: boolean }>`
       opacity: 0;
       transform: translateY(calc(var(--header-height) * -1));
     `}
+`;
+
+export const LinksList = styled.ul`
+  display: flex;
+  flex-flow: row nowrap;
+  list-style-type: none;
+  gap: 2rem;
+
+  li {
+    a {
+      color: var(--color-primary);
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 `;

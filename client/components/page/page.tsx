@@ -11,7 +11,6 @@ interface Props {
 const Page = ({ navigation, children, ...props }: Props) => {
   return (
     <PageContainer {...props}>
-      {/* <Navigation links={navigation} /> */}
       <Header links={navigation} />
       <main>{children}</main>
       <footer>
