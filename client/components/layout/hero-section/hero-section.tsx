@@ -1,6 +1,6 @@
 import * as React from "react";
 import { HeroContainer, Titles } from "./styles";
-import { HeroSectionType } from "../../../types/cms-types";
+import { HeroSectionType, SharedStylesProps } from "../../../types/cms-types";
 import GridItem from "../grid/grid-item";
 import Section from "../section/section";
 import HeroMedia from "./hero-media";
@@ -12,8 +12,13 @@ const HeroSection = ({ ...props }: HeroSectionType) => {
     [props?.overlay]
   );
 
+  const heroStyles: SharedStylesProps | undefined = React.useMemo(() => {
+    if (props?.styles?.background) return props.styles;
+    return { background: "primary" };
+  }, [props?.styles]);
+
   return (
-    <Section top>
+    <Section top styles={heroStyles}>
       <GridItem columnStart={1} columnSpan={12} fullWidth>
         <HeroContainer>
           <HeroMedia media={props?.backgroundMedia} overlay={props?.overlay} />
