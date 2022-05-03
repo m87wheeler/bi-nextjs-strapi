@@ -27,7 +27,7 @@ export const GlobalReset = createGlobalStyle`
         --color-secondary-contrast: ${theme.palette.primary.contrast};
 
         --color-white: ${theme.palette.white};
-        --color-white-contrast: ${theme.palette.black};
+        --color-white-contrast: ${theme.palette.primary._};
 
         --color-black: ${theme.palette.black};
         --color-black-contrast: ${theme.palette.white};

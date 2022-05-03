@@ -7,6 +7,8 @@ import Link from "next/link";
 import Grid from "../grid/grid";
 import GridItem from "../grid/grid-item";
 import { ScrollContext } from "../../../context/scroll-context";
+import Image from "next/image";
+import Logo from "../../ui/logo/logo";
 
 interface Props {
   links: NavigationLinksType[];
@@ -23,7 +25,7 @@ const Header = ({ ...props }: Props) => {
       <HeaderContainer inView={inView} variant={backgroundColor} {...props}>
         <Grid>
           <GridItem columnStart={2} columnSpan={3} align="flex-start">
-            <h1>BI</h1>
+            <Logo color={backgroundColor} />
           </GridItem>
           <GridItem columnStart={6} columnSpan={6} align="flex-end">
             <LinksList>
