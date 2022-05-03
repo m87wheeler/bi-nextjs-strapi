@@ -13,7 +13,7 @@ const LinkType = ({ href, blank = true, children }: Props) => {
 
   if (isExternalUrl(href)) {
     return (
-      <a href={href} target={blank ? "_blank" : ""} rel="noopener">
+      <a href={href} target={blank ? "_blank" : ""} rel="noopener noreferrer">
         {children}
       </a>
     );

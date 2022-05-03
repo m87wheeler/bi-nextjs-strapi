@@ -12,7 +12,7 @@ const Button = ({ children, ...props }: Props) => {
   if (props?.link) {
     return isExternalUrl(props?.link) ? (
       <ButtonContainer {...props}>
-        <a href={props?.link} target="_blank" rel="noopenner">
+        <a href={props?.link} target="_blank" rel="noopenner noreferrer">
           {children}
         </a>
       </ButtonContainer>
